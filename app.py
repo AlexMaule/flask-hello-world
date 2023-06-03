@@ -8,8 +8,8 @@ from flask_cors import CORS
 
 from flask import Flask, jsonify
 
-#Database total accidents Setup
-engine = create_engine(os.getenv('DATABASE_URI'))
+#Database total accidents Setup  // os.getenv('DATABASE_URI')
+engine = create_engine("sqlite:///accidents.sqlite")
 
 Base = automap_base()
 
