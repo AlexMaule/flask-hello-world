@@ -1,10 +1,10 @@
 import sqlalchemy
 import os
-# import numpy as np
+import numpy as np
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-# from flask_cors import CORS
+from flask_cors import CORS
 
 from flask import Flask, jsonify
 
@@ -20,7 +20,7 @@ accident = Base.classes.accidents
 
 # Flask Setup
 app = Flask(__name__)
-# CORS(app)
+CORS(app)
 # Flask Routes
 @app.route("/")
 def welcome():
