@@ -3,13 +3,10 @@ import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-from flask import Flask
-from flask_cors import CORS
+# from flask_cors import CORS
 
 from flask import Flask, jsonify
 
-app = Flask(__name__)
-CORS(app)
 #Database total accidents Setup
 engine = create_engine(os.getenv('DATABASE_URI'))
 
@@ -22,7 +19,7 @@ accident = Base.classes.accidents
 
 # Flask Setup
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
 # Flask Routes
 @app.route("/")
 def welcome():
